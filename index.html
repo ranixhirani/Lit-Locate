@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <style>
+        /* Your existing CSS styles */
+        /* ... */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(background.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 200vh; /* Increase the height */
+            background-attachment: fixed;
+        }
+
+        .navbar{
+            width: 1200px;
+            height: 350px;
+            margin: auto;
+        }
+
+        .icon{
+            width: 200px;
+            float: left;
+            height: 70px;
+        }
+
+        .logo{
+            color: #ff7200;
+            font-size: 35px;
+            font-family: Arial;
+            padding-left: 20px;
+            float: left;
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .menu{
+            width: 400px;
+            float: left;
+            height: 70px;
+        }
+
+        ul{
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul li{
+            list-style: none;
+            margin-left: 62px;
+            margin-top: 27px;
+            font-size: 14px;
+        }
+
+        ul li a{
+            text-decoration: none;
+            color: #fff;
+            font-family: Arial;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+        }
+
+        ul li a:hover{
+            color: #ff7200;
+        }
+
+        .search{
+            width: 330px;
+            float: left;
+            margin-left: 270px;
+        }
+
+        .srch{
+            font-family: 'Times New Roman';
+            width: 200px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid #ff7200;
+            margin-top: 13px;
+            color: #fff;
+            border-right: none;
+            font-size: 16px;
+            float: left;
+            padding: 10px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        .btn{
+            width: 100px;
+            height: 40px;
+            background: #ff7200;
+            border: 2px solid #ff7200;
+            margin-top: 13px;
+            color: #fff;
+            font-size: 15px;
+            border-bottom-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover{
+            color: #000;
+        }
+
+        .btn:focus{
+            outline: none;
+        }
+
+        .srch:focus{
+            outline: none;
+        }
+
+        .content{
+            width: 1200px;
+            height: auto;
+            margin: auto;
+            color: #fff;
+            position: relative;
+        }
+
+        .content h1 {
+            font-family: 'Times New Roman';
+            font-size: 50px;
+            padding-left: 10px;
+            padding-bottom: 95px;
+            margin-top: -80px; /* Adjust this value as needed */
+            letter-spacing: 2px;
+
+        }
+
+
+        .content .par {
+            padding-left: 20px;
+            padding-bottom: 105px;
+            padding-top: 20px;
+            font-family: Arial;
+            letter-spacing: 1.2px;
+            line-height: 30px;
+            margin-top: -80px; /* Adjust this value as needed */
+        }
+        
+
+        .content .cn{
+            width: 160px;
+            height: 40px;
+            background: #ff7200;
+            border: none;
+            margin-bottom: 100px;
+            margin-left: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .4s ease;
+        }
+
+        .content .cn a{
+            text-decoration: none;
+            color: #000;
+            transition: .3s ease;
+        }
+
+        .cn:hover{
+            background-color: #fff;
+        }
+
+        .content span{
+            color: #ff7200;
+            font-size: 65px;
+        }
+
+        .form{
+            width: 250px;
+            height: 380px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+            position: absolute;
+            top: -20px;
+            left: 870px;
+            transform: translate(0%,-5%);
+            border-radius: 10px;
+            padding: 25px;
+        }
+        .form input:focus{
+            outline: none;
+        }
+
+        ::placeholder{
+            color: #fff;
+            font-family: Arial;
+        }
+        /* Additional styles for the new section */
+        .secRight {
+            width: 100%;
+            padding: 50px 0;
+            background-color: #f4f4f4;
+            text-align: left; /* Updated alignment to left */
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .left-content {
+            width: 40%; /* Adjust width as needed */
+            padding: 0 50px;
+        }
+
+        .left-content h1 {
+            margin-bottom: 20px;
+        }
+
+        .right-content img {
+            max-width: 500px; /* Change the maximum width */
+            max-height: 700px; /* Change the maximum height */
+            object-fit: contain; /* Optional: to maintain aspect ratio */
+            border-radius: 5px;
+         }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <!-- Your existing navbar code -->
+            <!-- ... -->
+            <div class="icon">
+                <h2 class="logo">LibraLink</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#" onclick="scrollToHome()">HOME</a></li>
+                    <li><a href="#about" onclick="scrollToAbout()">ABOUT</a></li>
+                    <li><a href="#" onclick="scrollToServices()">SERVICE</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Online reader's <br><span>Guidance System</span> </h1>
+            <p class="par">Our website finds nearby libraries for you, 
+                making it easy to access the right one<br>Discover libraries in your area,
+                simplifying your search for reading materials</p>
+
+            <button class="cn"><a href="register.html">REGISTER</a></button>
+            <button class="cn"><a href="#">SIGN IN</a></button>
+        </div>
+
+        <!-- New section -->
+        <section class="secRight" id="about">
+            <div class="content-wrapper">
+                <div class="left-content">
+                    <h1>About</h1>
+                    <p class="sectionTag">A library is a place where you can find and use books, movies, music, and other materials. 
+                        It can be a physical building or a website. Libraries have librarians who can help you find information. 
+                        They also provide quiet areas for studying and sometimes have computers and internet access. 
+                        Libraries can be for the public, schools, companies, or individuals. They offer different services depending on the type of library. 
+                        Some libraries also host programs and activities for learning. Modern libraries can be accessed online, allowing you to borrow materials from home. 
+                        The services provided by libraries are often called library services or information services.</p>
+                </div>
+                <div class="right-content">
+                    <img src="libra1.jpg" alt="Library Image">
+                </div>
+            </div>
+        </section>
+
+        <section class="secRight" id="about">
+            <div class="content-wrapper">
+                <div class="left-content">
+                    <h1>Services</h1>
+                    <p class="sectionTag">Access to books, movies, music, and other materials.<br>Assistance from librarians in finding information.<br>Quiet areas for studying.
+                    <br>Computers and internet access.<br>Services catering to the needs of the public, schools, companies, and individuals.<br>Different services depending on the type of library.
+                    <br>Programs and activities for learning.<br>Online access to borrow materials from home..</p>
+                </div>
+                <div class="right-content">
+                    <img src="libra2.jpg" alt="Library Image">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script>
+        function scrollToHome() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToAbout() {
+            const aboutSection = document.getElementById('about');
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        function scrollToServices() {
+            const aboutSection = document.getElementById('about');
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <style>
+        /* Your existing CSS styles */
+        /* ... */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(background.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 200vh; /* Increase the height */
+            background-attachment: fixed;
+        }
+
+        .navbar{
+            width: 1200px;
+            height: 350px;
+            margin: auto;
+        }
+
+        .icon{
+            width: 200px;
+            float: left;
+            height: 70px;
+        }
+
+        .logo{
+            color: #ff7200;
+            font-size: 35px;
+            font-family: Arial;
+            padding-left: 20px;
+            float: left;
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .menu{
+            width: 400px;
+            float: left;
+            height: 70px;
+        }
+
+        ul{
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul li{
+            list-style: none;
+            margin-left: 62px;
+            margin-top: 27px;
+            font-size: 14px;
+        }
+
+        ul li a{
+            text-decoration: none;
+            color: #fff;
+            font-family: Arial;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+        }
+
+        ul li a:hover{
+            color: #ff7200;
+        }
+
+        .search{
+            width: 330px;
+            float: left;
+            margin-left: 270px;
+        }
+
+        .srch{
+            font-family: 'Times New Roman';
+            width: 200px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid #ff7200;
+            margin-top: 13px;
+            color: #fff;
+            border-right: none;
+            font-size: 16px;
+            float: left;
+            padding: 10px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        .btn{
+            width: 100px;
+            height: 40px;
+            background: #ff7200;
+            border: 2px solid #ff7200;
+            margin-top: 13px;
+            color: #fff;
+            font-size: 15px;
+            border-bottom-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover{
+            color: #000;
+        }
+
+        .btn:focus{
+            outline: none;
+        }
+
+        .srch:focus{
+            outline: none;
+        }
+
+        .content{
+            width: 1200px;
+            height: auto;
+            margin: auto;
+            color: #fff;
+            position: relative;
+        }
+
+        .content h1 {
+            font-family: 'Times New Roman';
+            font-size: 50px;
+            padding-left: 10px;
+            padding-bottom: 95px;
+            margin-top: -80px; /* Adjust this value as needed */
+            letter-spacing: 2px;
+
+        }
+
+
+        .content .par {
+            padding-left: 20px;
+            padding-bottom: 105px;
+            padding-top: 20px;
+            font-family: Arial;
+            letter-spacing: 1.2px;
+            line-height: 30px;
+            margin-top: -80px; /* Adjust this value as needed */
+        }
+        
+
+        .content .cn{
+            width: 160px;
+            height: 40px;
+            background: #ff7200;
+            border: none;
+            margin-bottom: 100px;
+            margin-left: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .4s ease;
+        }
+
+        .content .cn a{
+            text-decoration: none;
+            color: #000;
+            transition: .3s ease;
+        }
+
+        .cn:hover{
+            background-color: #fff;
+        }
+
+        .content span{
+            color: #ff7200;
+            font-size: 65px;
+        }
+
+        .form{
+            width: 250px;
+            height: 380px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+            position: absolute;
+            top: -20px;
+            left: 870px;
+            transform: translate(0%,-5%);
+            border-radius: 10px;
+            padding: 25px;
+        }
+        .form input:focus{
+            outline: none;
+        }
+
+        ::placeholder{
+            color: #fff;
+            font-family: Arial;
+        }
+        /* Additional styles for the new section */
+        .secRight {
+            width: 100%;
+            padding: 50px 0;
+            background-color: #f4f4f4;
+            text-align: left; /* Updated alignment to left */
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .left-content {
+            width: 40%; /* Adjust width as needed */
+            padding: 0 50px;
+        }
+
+        .left-content h1 {
+            margin-bottom: 20px;
+        }
+
+        .right-content img {
+            max-width: 500px; /* Change the maximum width */
+            max-height: 700px; /* Change the maximum height */
+            object-fit: contain; /* Optional: to maintain aspect ratio */
+            border-radius: 5px;
+         }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <!-- Your existing navbar code -->
+            <!-- ... -->
+            <div class="icon">
+                <h2 class="logo">LibraLink</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#" onclick="scrollToHome()">HOME</a></li>
+                    <li><a href="#about" onclick="scrollToAbout()">ABOUT</a></li>
+                    <li><a href="#" onclick="scrollToServices()">SERVICE</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Online reader's <br><span>Guidance System</span> </h1>
+            <p class="par">Our website finds nearby libraries for you, 
+                making it easy to access the right one<br>Discover libraries in your area,
+                simplifying your search for reading materials</p>
+
+            <button class="cn"><a href="#">REGISTER</a></button>
+            <button class="cn"><a href="#">SIGN IN</a></button>
+        </div>
+
+        <!-- New section -->
+        <section class="secRight" id="about">
+            <div class="content-wrapper">
+                <div class="left-content">
+                    <h1>About</h1>
+                    <p class="sectionTag">A library is a place where you can find and use books, movies, music, and other materials. 
+                        It can be a physical building or a website. Libraries have librarians who can help you find information. 
+                        They also provide quiet areas for studying and sometimes have computers and internet access. 
+                        Libraries can be for the public, schools, companies, or individuals. They offer different services depending on the type of library. 
+                        Some libraries also host programs and activities for learning. Modern libraries can be accessed online, allowing you to borrow materials from home. 
+                        The services provided by libraries are often called library services or information services.</p>
+                </div>
+                <div class="right-content">
+                    <img src="libra1.jpg" alt="Library Image">
+                </div>
+            </div>
+        </section>
+
+        <section class="secRight" id="about">
+            <div class="content-wrapper">
+                <div class="left-content">
+                    <h1>Services</h1>
+                    <p class="sectionTag">Access to books, movies, music, and other materials.<br>Assistance from librarians in finding information.<br>Quiet areas for studying.
+                    <br>Computers and internet access.<br>Services catering to the needs of the public, schools, companies, and individuals.<br>Different services depending on the type of library.
+                    <br>Programs and activities for learning.<br>Online access to borrow materials from home..</p>
+                </div>
+                <div class="right-content">
+                    <img src="libra2.jpg" alt="Library Image">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script>
+        function scrollToHome() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToAbout() {
+            const aboutSection = document.getElementById('about');
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        function scrollToServices() {
+            const aboutSection = document.getElementById('about');
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

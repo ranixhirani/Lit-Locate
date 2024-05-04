@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* Set background image */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: rgb(248, 113, 17); /* Change button color to orange */
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #ff8c00; /* Darker shade on hover */
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registrationForm">
+        <h2>User Registration</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <!-- Add a new input field for pin code -->
+        <label for="pincode">Pin Code:</label>
+        <input type="text" id="pincode" name="pincode" required>
+
+        <button type="button" onclick="validateForm()">Register</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var address = document.getElementById('address').value;
+            var pincode = document.getElementById('pincode').value;
+
+            // Check if any required field is empty
+            if (name === '' || phone === '' || address === '' || pincode === '') {
+                alert("Please fill in all the required fields.");
+                return;
+            }
+
+            // Simple validation for the phone number (10 digits)
+            var phoneRegex = /^[0-9]{10}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return;
+            }
+
+            // You can add more validation rules for name, address, and pin code as needed
+
+            // If all validations pass, you can proceed with registration logic
+            alert("Registration successful!\nName: " + name + "\nPhone: " + phone + "\nAddress: " + address + "\nPin Code: " + pincode);
+            // Redirect to the search page or perform further actions
+            window.location.href = "search.php";
+        }
+    </script>
+
+</body>
+</html>
